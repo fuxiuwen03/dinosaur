@@ -43,22 +43,6 @@ PROMPT_TEMPLATE = """你是一位数据分析助手，你的回应内容取决�
 #api_key = st.secrets['API_KEY']
 
 
-def get_answer(question: str):
-    """
-    从大模型获取答案
-    :param question: 用户的问题
-    :return: 迭代器对象
-    """
-    try:
-        client = OpenAI(base_url=base_url, api_key=api_key)
-        stream = get_llm_response(client, model=model_name, user_prompt=question, stream=True)
-        for chunk in stream:
-            yield chunk.choices[0].delta.content or ''
-    except Exception as e:
-        # print(e)
-        yield from '暂时无法提供回复，请检查你的配置是否正确'
-
-
 
 def dataframe_agent(df, query):
     #pi_key: object = st.secrets['API_KEY']
