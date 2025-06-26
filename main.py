@@ -13,10 +13,10 @@ import PyPDF2
 import requests
 from urllib.parse import urlparse
 from utils import dataframe_agent
-from langchain.cache import SQLiteCache
+from langchain.cache import InMemoryCache
 
 # 设置缓存
-set_llm_cache(SQLiteCache(database_path='cache.db'))
+set_llm_cache(InMemoryCache())
 
 # 初始化session state
 if 'df' not in st.session_state:
