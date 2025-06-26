@@ -280,6 +280,9 @@ with st.sidebar:
         model_options = {'deepseek-chat','deepseek-reasoner'}
     model_name = st.selectbox(label='请选择要使用的模型：',options=model_options)
     api_key = st.text_input(label='请输入你的key:',type='password')
+if not api_key:
+    st.error('请提供访问大模型需要的API Key！！！')
+    st.stop()
 st.header("贵中医数据分析智能体")
 st.markdown("---")
 st.subheader("数据输入设置")
