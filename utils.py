@@ -40,7 +40,7 @@ PROMPT_TEMPLATE = """你是一位数据分析助手，你的回应内容取决�
 
 
 # 从 secrets 获取 API 密钥
-api_key = st.secrets['API_KEY']
+#api_key = st.secrets['API_KEY']
 
 
 
@@ -48,7 +48,7 @@ api_key = st.secrets['API_KEY']
 
 
 def dataframe_agent(df, query):
-
+    #pi_key: object = st.secrets['API_KEY']
     load_dotenv()
     model = ChatOpenAI(
         base_url='https://api.deepseek.com',
