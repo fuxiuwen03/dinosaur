@@ -6,11 +6,11 @@ Version: 0.1
 Date: 2025/6/25
 """
 import json
-#from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI, OpenAI
-from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
+from turtle import st
 
-from main import model_name, base_url, api_key
+from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI
+from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
 
 PROMPT_TEMPLATE = """你是一位数据分析助手，你的回应内容取决于用户的请求内容，请按照下面的步骤处理用户请求：
 1. 思考阶段 (Thought) ：先分析用户请求类型（文字回答/表格/图表），并验证数据类型是否匹配。
@@ -44,9 +44,12 @@ PROMPT_TEMPLATE = """你是一位数据分析助手，你的回应内容取决�
 
 
 
+
+
+
 def dataframe_agent(df, query):
-    #pi_key: object = st.secrets['API_KEY']
-    #load_dotenv()
+
+    load_dotenv()
     model = ChatOpenAI(
         base_url='https://api.deepseek.com',
         model="deepseek-chat",
