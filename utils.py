@@ -6,8 +6,6 @@ Version: 0.1
 Date: 2025/6/25
 """
 import json
-from turtle import st
-
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
